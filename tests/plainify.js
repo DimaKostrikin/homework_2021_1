@@ -79,5 +79,27 @@ QUnit.module('Тестируем функцию plainify', function () {
 		};
 
 		assert.deepEqual(plainify(nested4), plain4);
+
+		const nested5 = {
+			'deep with space': {
+				bar: 111,
+				foo: 222
+			}
+		};
+
+		const plain5 = {
+			'deep with space.bar': 111,
+			'deep with space.foo': 222,
+		};
+
+		assert.deepEqual(plainify(nested5), plain5);
+
+		const array = [1, 2, 3, 4];
+
+		assert.equal(plainify(array), null);
+
+		const number = 1;
+
+		assert.equal(plainify(number), null);
 	});
 });
