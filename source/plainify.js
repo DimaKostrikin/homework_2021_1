@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Plainifies a nested object.
  * @author Dmitry Kostrikin
@@ -9,8 +11,6 @@
  * @param {Object} nested
  * @returns {Object|null} If sent param is not an object, returns null
  */
-
-'use strict';
 
 const plainify = (nested, keyPath = '') =>
 	nested.constructor === Object ?

@@ -93,7 +93,9 @@ QUnit.module('Тестируем функцию plainify', function () {
 		};
 
 		assert.deepEqual(plainify(nested5), plain5);
+	});
 
+	QUnit.test('В функцию передан не Object', function (assert) {
 		const array = [1, 2, 3, 4];
 
 		assert.equal(plainify(array), null);
@@ -101,5 +103,9 @@ QUnit.module('Тестируем функцию plainify', function () {
 		const number = 1;
 
 		assert.equal(plainify(number), null);
+
+		function someFunc(someth) {}
+
+		assert.equal(plainify(someFunc), null);
 	});
 });
